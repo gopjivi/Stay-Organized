@@ -1,0 +1,81 @@
+.topheader
+{
+    background-color:#89CFF0;
+   margin-top: 0px ;
+   padding-top: 0px;;
+}
+
+  @media (min-width: 768px) {
+    .navbar-toggler {
+        display: none;
+    }
+}
+
+.bgcolor
+{
+    background-color: #f2f7ff;;
+}
+
+.copyright-area{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    text-align: center;
+    padding: 14px 0px;
+    position: fixed;
+    background-color:#89CFF0;
+}
+.copyright-area p{
+    margin-bottom: 0px;
+    color: black;
+}
+
+.margintop
+{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+#tasktable
+{
+    display: none;
+    text-align: center;
+}
+
+.bi-green
+{
+    color: green;
+}
+.bi-red
+{
+    color:red;
+}
+
+.low
+{
+    background-color: green;
+}
+
+.medium
+{
+    background-color: orange;
+}
+.high
+{
+    background-color: red;
+}
+
+.tablediv
+{
+    
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.btn-blue
+{
+    background-color:#89CFF0;
+}
+
+li > .dropdown-menu { background-color:#f8f9fa }
