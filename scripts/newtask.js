@@ -52,7 +52,7 @@ function getcategory() {
     })
     .then(data => {
       for (let i = 0; i < data.length; i++) {
-        let theOption = new Option(data[i].name, data[i].id);
+        let theOption = new Option(data[i].name, data[i].name);
 
         // append the option as a child of (inside) the 
         // select element

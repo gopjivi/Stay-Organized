@@ -6,11 +6,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
-
+<script src="scripts/newuser.js"></script>
     <!-- Bootstrap Font Icon CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" >
     <title>Stay Organized</title>
-    <script src="scripts/index.js" defer></script>
+    
 </head>
 <body class="bgcolor">
 
@@ -95,6 +95,8 @@
                 </div>
            
         </div>
+
+
         <div class="row">
             <div class="col-md-3 col-lg-2 d-none 
             d-md-block sidebar bg-light">
@@ -137,100 +139,108 @@
                 </div>
             </nav>
         </div>
-        <div class="col-md-9">
-            <div class="row tablediv topmargin">
-                <div class="col-6 col-lg-3 col-md-6">
-                <div class="card">
-                    <div class="card-body px-4 py-4-5">
-                        <div class="row">
-                            <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-center ">
-                                <div class="stats-icon purple mb-2">
-                                    <i class="bi bi-person-fill"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                <h6 class="font-semibold">Users</h6>
-                                <h6 id="userid" class="font-extrabold mb-0"></h6>
-                            </div>
-                        </div> 
-                    </div>
+        
+        <div class="col-md-9 d-flex justify-content-center">
+            <div class="centerdiv">
+                <div class="divheader">
+<h3 class="text-center">Create New User</h3>
                 </div>
-                </div>
-                <div class="col-6 col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-body px-4 py-4-5">
-                            <div class="row">
-                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-center ">
-                                    <div class="stats-icon mb-2">
-                                        <i class="bi bi-list-task"></i>
-                                    </div>
-                                </div>
-                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="font-semibold">Tasks</h6>
-                                    <h6 id="taskid" class="font-extrabold mb-0"></h6>
-                                </div>
-                            </div> 
-                        </div>
+                <form class="row g-3 needs-validation tablediv" id="taskform" novalidate>
+                  
+                    <div class="col-md-8">
+                      <label for="user" class="form-label">User</label>
+                      <input type="text" class="form-control" id="user" required>
+               
+                   
+                    <div class="invalid-feedback" id="feedbackuser">
+                        Please enter a user
+                      </div>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
                     </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body px-4 py-4-5">
-                                <div class="row">
-                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-center ">
-                                        <div class="stats-icon mb-2">
-                                            <i class="bi bi-filter-square-fill"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                        <h6 class="font-semibold">Category</h6>
-                                        <h6 id="categoryid" class="font-extrabold mb-0"></h6>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                        </div>
-                        <div class="col-6 col-lg-3 col-md-6">
-                            <div class="card">
-                                <div class="card-body px-4 py-4-5">
-                                    <div class="row">
-                                        <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-center ">
-                                            <div class="stats-icon mb-2">
-                                                <i class="bi bi-tag-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="font-semibold">Priority</h6>
-                                            <h6 class="font-extrabold mb-0">3</h6>
-                                        </div>
-                                    </div> 
-                                </div>
-                            </div>
-                            </div>
+                    <div class="col-md-8">
+                      <label for="username" class="form-label">User Name</label>
+                      <input type="text" class="form-control" id="username" required>
                     
+                    <div class="invalid-feedback">
+                        Please enter a username
+                      </div>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="text" class="form-control" id="password" required>
+                     
+                      <div class="invalid-feedback">
+                          Please enter a password
+                        </div>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-md-8">
+                        <label for="confirmpassword" class="form-label">Confirm Password</label>
+                        <input type="text" class="form-control" id="confirmpassword" required>
+                     
+                      <div class="invalid-feedback">
+                          Please enter a valid  Confirm password
+                        </div>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                   
+                    
+                 
+                   
+                   
+                    <div class="col-12">
+                      <button class="btn btn-blue" type="submit" onclick="Adduser(event)"  id="adduserbutton">Submit</button>
+                    </div>
+                  </form>
+                <!-- <div class="row">
+                   <div class="col-md-6 divmarginbottom">
+                    <lable  class="lableclass">User</lable>
+                </div>
+                <div class="col-md-6 divmarginbottom">
+                    <input type="text" class="inputwidth" id="user">
+                </div>
+               
+                    <div class="col-md-6 col-sm-3 divmarginbottom">
+                     <lable class="lableclass" >User Name</lable>
+                 </div>
+                 <div class="col-md-6 col-sm-3 divmarginbottom">
+                     <input type="text" class="inputwidth" id="username">
+                     <span id = "blankMsg" style="color:red"> </span>
+                 </div>
+                 <div class="col-md-6 divmarginbottom">
+                    <lable  class="lableclass">Password</lable>
+                </div>
+                <div class="col-md-6 divmarginbottom">
+                    <input type="password" class="inputwidth" id="password">
+                </div>
+                <div class="col-md-6 divmarginbottom">
+                    <lable class="lableclass">Confirm Password</lable>
+                </div>
+                <div class="col-md-6 divmarginbottom">
+                    <input type="password" class="inputwidth" id="confirmpassword">
+                </div>
+                <div class="col-md-12 text-center">
+                   <button id="adduser" class="btn btn-blue" style="margin-top: 20px;" type="button" >Add user</button>
+                </div>
+            </div>
+            -->
+
+          
+          
+            </div>
         </div>
-<div class="row">
-    <div class="col-md-12">
-        <h3>My Tasks</h3>
     </div>
-    <div class ="col-md-12">
-        <table id="tasktable" class="table table-striped align-middle mt-20 bg-white text-center">
-            <thead class="bg-light">
-              <tr>
-                <th>category</th>
-                <th>description</th>
-                <th>priority</th>
-                <th>completed</th>
-                
-              </tr>
-            </thead>
-            <tbody id="displaytask">
+       
     
-            </tbody>
-           </table>
-    </div>
-</div>
-    </div>
 
    
     <footer>
