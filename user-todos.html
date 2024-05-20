@@ -10,7 +10,9 @@
     <!-- Bootstrap Font Icon CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" >
     <title>Stay Organized</title>
+    <script src="scripts/common.js" defer></script>
     <script src="scripts/viewtask.js" defer></script>
+
 </head>
 <body class="bgcolor">
 
@@ -31,7 +33,7 @@
         aria-labelledby="sidebarLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title text-light"
-                id="sidebarLabel">GFG Sidebar</h5>
+                id="sidebarLabel">Stay-Organised</h5>
             <button type="button"
                     class="btn-close text-reset"
                     data-bs-dismiss="offcanvas"
@@ -41,21 +43,26 @@
         <div class="offcanvas-body">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active text-dark"
-                    href="#">
-                    Home
+                    <a class="nav-link active 
+                            text-dark" id="canvashomelinkid"
+                    href="index.html">
+                        Home
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark"
-                    href="#">
-                    About Us
+        
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Tasks
                     </a>
-                </li>
+                    <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink" style="border: 0;">
+                        <li><a class="dropdown-item" id="canvasnewtaskid" href="new-todo.html">Create New</a></li>
+                        <li><a class="dropdown-item" id="canvasviewtaskid" href="user-todos.html">View by User</a></li>
+                    </ul>
+                  </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark"
-                    href="#">
-                    Contact Us
+                    <a class="nav-link text-dark" id="canvasnewuserid"
+                    href="new_user.html">
+                       Users
                     </a>
                 </li>
             </ul>
@@ -65,36 +72,37 @@
     <div class="container-fluid" style="margin-top: 0;">
         <div class="row topheader">
            
-                <div class="col-md-2 my-auto ">
-                    <h5 class="brand-name">Stay-Organised</h5>
-                </div>
-                <div class="col-md-6 my-auto d-none d-sm-none d-md-block d-lg-block">
+            <div class="col-md-2 my-auto ">
+                <h5 class="brand-name">Stay-Organised</h5>
+            </div>
+            <div class="col-md-4 my-auto d-none d-sm-none d-md-block d-lg-block">
 
-                </div>
-                <div class="col-md-3 my-auto">
-                    <form role="search">
-                        <div class="input-group">
-                            <input type="search" placeholder="Search" class="form-control" >
-                            <button class="btn" type="submit">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-1 my-auto">
-                    <ul class="nav justify-content-end">
-                        
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html">
-                                <i class="bi-person-fill"></i> 
-                            </a>
-                        </li>
+            </div>
+            <div class="col-md-3 my-auto">
+                <form role="search">
+                    <div class="input-group">
+                        <input type="search" placeholder="Search" class="form-control" >
+                        <button class="btn" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3 my-auto">
+                <ul class="nav justify-content-end">
+                    
+                   
+                    <li class="nav-item">
                       
-                    </ul>
-                </div>
-           
-        </div>
+                        <a class="nav-link text-dark" href="login.html">
+                         <span id="headername"></span>  <i class="bi-person-fill"></i> 
+                        </a>
+                    </li>
+                  
+                </ul>
+            </div>
+       
+    </div>
         <div class="row">
             <div class="col-md-3 col-lg-2 d-none 
             d-md-block sidebar bg-light">
@@ -106,7 +114,7 @@
                         <ul class="nav flex-column">
                             <li class="nav-item">
                                 <a class="nav-link active 
-                                        text-dark" 
+                                        text-dark" id="homelinkid"
                                 href="index.html">
                                     Home
                                 </a>
@@ -122,12 +130,12 @@
                                   Tasks
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink" style="border: 0;">
-                                    <li><a class="dropdown-item" href="new-todo.html">Create New</a></li>
-                                    <li><a class="dropdown-item" href="user-todos.html">View by User</a></li>
+                                    <li><a class="dropdown-item" id="newtaskid" href="new-todo.html">Create New</a></li>
+                                    <li><a class="dropdown-item" id="viewtaskid" href="user-todos.html">View by User</a></li>
                                 </ul>
                               </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark"
+                                <a class="nav-link text-dark" id="newuserid"
                                 href="new_user.html">
                                    Users
                                 </a>
@@ -140,12 +148,12 @@
         <div class="col-md-8 tablediv">
         <div class="container margintop text-center">
                 <div class="text-center">
-                    <lable>Select User:</lable>
+                    <lable>Please Select User Here :</lable>
                     <select id="userlList">
                     </select>
                 </div>
                 
-                <div>
+                <div style="margin-top: 20px;">
                     <table id="tasktable" class="table table-striped align-middle mt-20 bg-white text-center">
                         <thead class="bg-light">
                           <tr>
@@ -160,6 +168,9 @@
                 
                         </tbody>
                        </table>
+                       <div id="noresult" class="text-center bg-light text-danger" >
+                        No Results Found !!!
+                       </div>
                 </div>
                 </div>
             </div>

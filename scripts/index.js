@@ -7,6 +7,7 @@ function init()
 getusercount();
  gettaskcount();
  getcategorycount();
+ Setquerystring();  //Function in common.js
  Gettaskbyuser();
 }
 
@@ -71,16 +72,21 @@ function getusercount() {
         console.error('Error:', error);
       });
   }
+  
+
+  
 
   function Gettaskbyuser() 
  {
-   
+  const queryParams = new URLSearchParams(window.location.search);
+  const name = queryParams.get('name');
+  const id=queryParams.get('id');
+
     let li="";
-    let selectedValue =2;
-    if(selectedValue !="")
+    if(id !="")
     {
-        document.getElementById("tasktable").style.display = "table";
-    const apiUrl = 'http://localhost:8083/api/todos/byuser/'+selectedValue;
+       
+    const apiUrl = 'http://localhost:8083/api/todos/byuser/'+id;
     fetch(apiUrl)
     .then(response => {
       if (!response.ok) {
@@ -89,25 +95,28 @@ function getusercount() {
       return response.json();
     })
     .then(data => {
+      if(data.length>0)
+      {
+        document.getElementById("tasktable").style.display = "table";
+        document.getElementById("noresult").style.display = "none";
       for(let i=0; i<data.length; i++) {
         li += `<tr>
         <td>${data[i].category}</td>
         <td>${data[i].description} </td>`
       //  <td>${data[i].priority}</td>`
 
-        if(data[i].priority=="Low")
+       if(data[i].priority=="Low")
      {
-        li+=`<td><span class="low">${data[i].priority}</span></td>`;
+        li+=`<td><span class="badge bg-success">${data[i].priority}</span></td>`;
      }
      else if(data[i].priority=="Medium")
      {
-        li+=`<td><span class="medium">${data[i].priority}</span></td>`;
+        li+=`<td><span class="badge bg-warning">${data[i].priority}</span></td>`;
      }
        else if(data[i].priority=="High")  
        {
-        li+=`<td><span class="high">${data[i].priority}</span></td>`;
+        li+=`<td><span class="badge bg-danger">${data[i].priority}</span></td>`;
        }
-      
       
 
      if(data.completed==true)
@@ -121,8 +130,14 @@ function getusercount() {
          
       }
       document.getElementById("displaytask").innerHTML = li;
+    }
+    else{
+      document.getElementById("noresult").style.display = "block";
+      document.getElementById("tasktable").style.display = "none";
+    }
       
       })
+    
   
     .catch(error => {
       console.error('Error:', error);

@@ -5,6 +5,7 @@ window.onload = init;
 function init() {
   getusers();
   getcategory();
+  Setquerystring();  //Function in common.js
 }
 
 function getusers() {
@@ -103,7 +104,10 @@ function addtask(e) {
         // let btn = document.getElementById("taskbutton");
         // btn.disabled = true;
          alert("new task created successfully");
-         window.location.href="index.html";
+         const queryParams = new URLSearchParams(window.location.search);
+         const name = queryParams.get('name');
+         const id=queryParams.get('id');
+         window.location.href="index.html?name="+name+"&id="+id; 
       })
       .catch(err => {
         // If the POST returns an error, display a message
