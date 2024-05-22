@@ -1,184 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- Bootstrap Font Icon CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <title>Stay Organized</title>
     <script src="scripts/common.js" defer></script>
     <script src="scripts/index.js" defer></script>
 </head>
+
 <body class="bgcolor">
 
     <nav class="navbar navbar-light 
                  border-bottom-0">
         <!-- Navbar toggle button (hamburger icon) -->
-        <button class="navbar-toggler d-block d-md-none"
-                type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#sidebar"
-                aria-controls="sidebar">
+        <button class="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#sidebar" aria-controls="sidebar">
             <span class="navbar-toggler-icon"></span>
         </button>
     </nav>
-
+    <!--offcanvas for small screen done here-->
     <div class="offcanvas offcanvas-start 
-                 d-md-block bg-light" 
-        tabindex="-1" id="sidebar"
-        aria-labelledby="sidebarLabel">
+                 d-md-block bg-light" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title text-light"
-                id="sidebarLabel">Stay-Organised</h5>
-            <button type="button"
-                    class="btn-close text-reset"
-                    data-bs-dismiss="offcanvas"
-                    aria-label="Close">
+            <h5 class="offcanvas-title text-light" id="sidebarLabel">Stay-Organised</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
             </button>
         </div>
         <div class="offcanvas-body">
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link active 
-                            text-dark" id="canvashomelinkid"
-                    href="index.html">
+                            text-dark" id="canvashomelinkid" href="index.html">
                         Home
                     </a>
                 </li>
-        
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Tasks
+                    <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Tasks
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink" style="border: 0;">
+                    <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink"
+                        style="border: 0;">
                         <li><a class="dropdown-item" id="canvasnewtaskid" href="new-todo.html">Create New</a></li>
                         <li><a class="dropdown-item" id="canvasviewtaskid" href="user-todos.html">View by User</a></li>
                     </ul>
-                  </li>
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" id="canvasnewuserid"
-                    href="new_user.html">
-                       Users
+                    <a class="nav-link text-dark" id="canvasnewuserid" href="new_user.html">
+                        New User
                     </a>
                 </li>
             </ul>
         </div>
     </div>
 
-    <div class="container-fluid" style="margin-top: 0;">
-        <div class="row topheader">
-           
-                <div class="col-md-2 my-auto ">
-                    <h5 class="brand-name">Stay-Organised</h5>
-                </div>
-                <div class="col-md-4 my-auto d-none d-sm-none d-md-block d-lg-block">
+    <div class="container-fluid" style="margin-top: 0;margin-bottom: 0;height: 95vh;">
 
-                </div>
-                <div class="col-md-3 my-auto">
-                    <form role="search">
+        <!--main header-->
+        <div class="row topheader">
+
+            <div class="col-md-2 my-auto ">
+                <h5 class="brand-name">Stay-Organised</h5>
+            </div>
+            <div class="col-md-4 my-auto d-none d-sm-none d-md-block d-lg-block">
+
+            </div>
+            <div class="col-md-3 my-auto">
+                <!-- <form role="search">
                         <div class="input-group">
                             <input type="search" placeholder="Search" class="form-control" >
                             <button class="btn" type="submit">
                                 <i class="bi bi-search"></i>
                             </button>
                         </div>
-                    </form>
-                </div>
-                <div class="col-md-3 my-auto">
-                    <ul class="nav justify-content-end">
-                        
-                       
-                        <li class="nav-item">
-                          
-                            <a class="nav-link text-dark" href="login.html">
-                             <span id="headername"></span>  <i class="bi-person-fill"></i> 
-                            </a>
-                        </li>
-                      
-                    </ul>
-                </div>
-           
+                    </form> -->
+            </div>
+            <div class="col-md-3 my-auto">
+                <ul class="nav justify-content-end">
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link text-dark" href="login.html">
+                            <span id="headername"></span> <i class="bi-person-fill"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
         </div>
+        <!--sidebar-->
         <div class="row">
             <div class="col-md-3 col-lg-2 d-none 
             d-md-block sidebar bg-light">
-            <nav id="sidebarMenu">
-                <div class="position-sticky 
-                            vh-100">
-                    <div class="pt-3">
-                     
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link active 
-                                        text-dark" id="homelinkid"
-                                href="index.html">
-                                    Home
-                                </a>
-                            </li>
-                            <!-- <li class="nav-item">
+                <nav id="sidebarMenu">
+                    <div class="sidebarheight">
+                        <div class="pt-3">
+
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link active 
+                                        text-dark" id="homelinkid" href="index.html">
+                                        Home
+                                    </a>
+                                </li>
+                                <!-- <li class="nav-item">
                                 <a class="nav-link text-dark"
                                 href="user-todos.html">
                                   ToDo Task
                                 </a>
                             </li> -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Tasks
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink" style="border: 0;">
-                                    <li><a class="dropdown-item" id="newtaskid" href="new-todo.html">Create New</a></li>
-                                    <li><a class="dropdown-item" id="viewtaskid" href="user-todos.html">View by User</a></li>
-                                </ul>
-                              </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" id="newuserid"
-                                href="new_user.html">
-                                   Users
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <div class="col-md-9">
-            <div class="row tablediv topmargin">
-                <div class="col-6 col-lg-3 col-md-6 carddiv">
-                <div class="card">
-                    <div class="card-body px-4 py-4-5">
-                        <div class="row">
-                            <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-center ">
-                                <div class="stats-icon purple mb-2">
-                                    <i class="bi bi-person-fill"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7 text-center">
-                                <h6 class="font-semibold">Users</h6>
-                                <h6 id="userid" class="font-extrabold mb-0"></h6>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-                </div>
-                <div class="col-6 col-lg-3 col-md-6 carddiv">
-                    <div class="card">
-                        <div class="card-body px-4 py-4-5">
-                            <div class="row">
-                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-center ">
-                                    <div class="stats-icon mb-2">
-                                        <i class="bi bi-list-task"></i>
-                                    </div>
-                                </div>
-                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7 text-center">
-                                    <h6 class="font-semibold">Tasks</h6>
-                                    <h6 id="taskid" class="font-extrabold mb-0"></h6>
-                                </div>
-                            </div> 
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-dark dropdown-toggle" onclick=Viewitem() href="#"
+                                        id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Tasks
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-light" onmouseleave=Hideitem()
+                                        id="menuitemid" aria-labelledby="navbarDarkDropdownMenuLink" style="border: 0;">
+                                        <li><a class="dropdown-item" id="newtaskid" href="new-todo.html">Create New</a>
+                                        </li>
+                                        <li><a class="dropdown-item" id="viewtaskid" href="user-todos.html">View by
+                                                User</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" id="newuserid" href="new_user.html">
+                                        New User
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
+                </nav>
+            </div>
+
+            <!--cards done here-->
+            <div class="col-md-9">
+                <div class="row tablediv topmargin">
+                    <div class="col-6 col-lg-3 col-md-6 carddiv">
+                        <div class="card">
+                            <div class="card-body px-4 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-center ">
+                                        <div class="stats-icon purple mb-2">
+                                            <i class="bi bi-person-fill"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7 text-center">
+                                        <h6 class="font-semibold">Users</h6>
+                                        <h6 id="userid" class="font-extrabold mb-0"></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6 carddiv">
+                        <div class="card">
+                            <div class="card-body px-4 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-center ">
+                                        <div class="stats-icon mb-2">
+                                            <i class="bi bi-list-task"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7 text-center">
+                                        <h6 class="font-semibold">Tasks</h6>
+                                        <h6 id="taskid" class="font-extrabold mb-0"></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-6 col-lg-3 col-md-6 carddiv">
                         <div class="card">
@@ -193,58 +197,61 @@
                                         <h6 class="font-semibold">Category</h6>
                                         <h6 id="categoryid" class="font-extrabold mb-0"></h6>
                                     </div>
-                                </div> 
-                            </div>
-                        </div>
-                        </div>
-                        <div class="col-6 col-lg-3 col-md-6 carddiv">
-                            <div class="card">
-                                <div class="card-body px-4 py-4-5">
-                                    <div class="row">
-                                        <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-center ">
-                                            <div class="stats-icon mb-2">
-                                                <i class="bi bi-tag-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7 text-center">
-                                            <h6 class="font-semibold">Priority</h6>
-                                            <h6 class="font-extrabold mb-0">3</h6>
-                                        </div>
-                                    </div> 
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6 carddiv">
+                        <div class="card">
+                            <div class="card-body px-4 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-center ">
+                                        <div class="stats-icon mb-2">
+                                            <i class="bi bi-tag-fill"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7 text-center">
+                                        <h6 class="font-semibold">Priority</h6>
+                                        <h6 class="font-extrabold mb-0">3</h6>
+                                    </div>
+                                </div>
                             </div>
-                    
-        </div>
-<div class="row">
-    <div class="col-md-12 divmarginbottom">
-        <h5>My Tasks</h5>
-    </div>
-    <div class ="col-md-12">
-        <table id="tasktable" class="table table-striped align-middle mt-20 bg-white text-center">
-            <thead class="bg-light">
-              <tr>
-                <th>category</th>
-                <th>description</th>
-                <th>priority</th>
-                <th>completed</th>
-                
-              </tr>
-            </thead>
-            <tbody id="displaytask">
-    
-            </tbody>
-           </table>
+                        </div>
+                    </div>
 
-           <div id="noresult" class="text-center bg-light text-danger" >
-            No Results Found!!!
-           </div>
+                </div>
+
+                <!--my tasks-->
+                <div class="row">
+                    <div class="col-md-12 divmarginbottom">
+                        <h5>My Tasks</h5>
+                    </div>
+                    <div class="col-md-12">
+                        <table id="tasktable" class="table table-striped align-middle mt-20 bg-white text-center">
+                            <thead class="bg-light">
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Description</th>
+                                    <th>Deadline</th>
+                                    <th>Priority</th>
+                                    <th>Completed</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="displaytask">
+
+                            </tbody>
+                        </table>
+
+                        <div id="noresult" class="text-center bg-light text-danger">
+                            No Results Found!!!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-    </div>
-    </div>
-    </div>
-   
+    <!--footer-->
     <footer>
         <div class="copyright-area">
             <div class="container">
@@ -252,11 +259,14 @@
                     <div class="col-md-12">
                         <p class="text-center"> &copy; 2024 - Stay-Organised. All rights reserved.</p>
                     </div>
-                   
+
                 </div>
             </div>
         </div>
     </footer>
+
+
+
 </body>
 
 </html>

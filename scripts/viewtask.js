@@ -12,6 +12,7 @@ function init()
 
 }
 
+//get all users for dropdown
 function getusers()
 {
     // Specify the API endpoint for user data
@@ -45,7 +46,7 @@ function getusers()
       });
 }
 
-
+//users dropdown indexchanged
 function onUsersSelectionChanged() 
  {
     // find the value of the option selected
@@ -70,10 +71,10 @@ function onUsersSelectionChanged()
         document.getElementById("noresult").style.display = "none";
       for(let i=0; i<data.length; i++) {
         li += `<tr>
-        <td>${data[i].category}</td>
-        <td>${data[i].description} </td>`
-      //  <td>${data[i].priority}</td>`
-
+       
+        <td>${data[i].description} </td>
+      <td>${data[i].deadline}</td>`
+     // <td>${data[i].category}</td>
         if(data[i].priority=="Low")
      {
         li+=`<td><span class="badge bg-success">${data[i].priority}</span></td>`;
@@ -89,15 +90,22 @@ function onUsersSelectionChanged()
       
       
 
-     if(data.completed==true)
+     if(data[i].completed==true)
      {
-        li+=`<td><i class="bi bi-check-lg bi-green"></i></td></tr>`;
+        li+=`<td><i class="bi bi-check-lg bi-green"></i></td>`;
      }
      else
      {
-        li+=`<td><i class="bi bi-x-lg bi-red"></i></td></tr>`
+        li+=`<td><i class="bi bi-x-lg bi-red"></i></td>`
      }
-         
+     //li+=`<td><a href="details.html?cid=${data[i].id}">See details</a></td>`;
+     li+=`<td><button type="button" class="btn btn-blue" onclick="getInstanceAndShow(${data[i].id})">
+     <i class="bi bi-binoculars-fill"></i>
+   </button></td>`;
+   li+=`<td><button type="button" class="btn btn-blue" onclick="getInstanceAndEdit(${data[i].id})">
+   <i class="bi bi-pen-fill"></i>
+   </button></td></tr>`;
+     
       }
       document.getElementById("displaytask").innerHTML = li;
     }
@@ -115,6 +123,7 @@ function onUsersSelectionChanged()
     });
 }
 else{
-    alert("please select the user");
+    alert("Please Select the User");
 }
  }
+

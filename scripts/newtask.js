@@ -8,6 +8,7 @@ function init() {
   Setquerystring();  //Function in common.js
 }
 
+//get all users to load dropdown
 function getusers() {
   // Specify the API endpoint for user data
   const apiUrl = 'http://localhost:8083/api/users';
@@ -37,6 +38,7 @@ function getusers() {
     });
 }
 
+//get all category to load dropdown
 function getcategory() {
   // Specify the API endpoint for user data
   const apiUrl = 'http://localhost:8083/api/categories';
@@ -64,6 +66,7 @@ function getcategory() {
     });
 }
 
+//validate form details
 function validateFrom(event) {
   var form = document.querySelectorAll('.needs-validation')[0]
   if (!form.checkValidity()) {
@@ -73,6 +76,7 @@ function validateFrom(event) {
   form.classList.add('was-validated')
 }
 
+//add button click
 function addtask(e) {
   validateFrom(e);
   e.preventDefault();
@@ -103,11 +107,11 @@ function addtask(e) {
         // message.innerHTML = "Task Created";
         // let btn = document.getElementById("taskbutton");
         // btn.disabled = true;
-         alert("new task created successfully");
-         const queryParams = new URLSearchParams(window.location.search);
-         const name = queryParams.get('name');
-         const id=queryParams.get('id');
-         window.location.href="index.html?name="+name+"&id="+id; 
+        alert("New Task Created Successfully");
+        const queryParams = new URLSearchParams(window.location.search);
+        const name = queryParams.get('name');
+        const id = queryParams.get('id');
+        window.location.href = "index.html?name=" + name + "&id=" + id;
       })
       .catch(err => {
         // If the POST returns an error, display a message
