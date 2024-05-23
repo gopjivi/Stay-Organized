@@ -21,7 +21,7 @@
 <body class="bgcolor">
 
   <nav class="navbar navbar-light 
-  border-bottom-0">
+  border-bottom-0" style="margin-bottom: 3px;">
     <!-- Navbar toggle button (hamburger icon) -->
     <button class="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
       aria-controls="sidebar">
@@ -31,8 +31,8 @@
   <!--offcanvas for small screen done here-->
   <div class="offcanvas offcanvas-start 
                  d-md-block bg-light" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title text-light" id="sidebarLabel">Stay-Organised</h5>
+    <div class="offcanvas-header topheader">
+      <h5 class="offcanvas-title text-dark" id="sidebarLabel">Stay-Organised</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
       </button>
     </div>
@@ -44,22 +44,22 @@
             Home
           </a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link text-dark" id="canvasnewuserid" href="new_user.html">
+           Create New User
+          </a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
             data-bs-toggle="dropdown" aria-expanded="false">
             Tasks
           </a>
           <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink" style="border: 0;">
-            <li><a class="dropdown-item" id="canvasnewtaskid" href="new-todo.html">Create New</a></li>
+            <li><a class="dropdown-item" id="canvasnewtaskid" href="new-todo.html">Create New Task</a></li>
             <li><a class="dropdown-item" id="canvasviewtaskid" href="user-todos.html">View by User</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" id="canvasnewuserid" href="new_user.html">
-            New User
-          </a>
-        </li>
+       
       </ul>
     </div>
   </div>
@@ -120,105 +120,107 @@
                               ToDo Task
                             </a>
                         </li> -->
+                        <li class="nav-item">
+                          <a class="nav-link text-dark" id="newuserid" href="new_user.html">
+                           Create New User
+                          </a>
+                        </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link text-dark dropdown-toggle" onclick=Viewitem() href="#"
-                    id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    id="navbarDarkDropdownMenuLinksidebar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Tasks
                   </a>
                   <ul class="dropdown-menu dropdown-menu-light" onmouseleave=Hideitem() id="menuitemid"
-                    aria-labelledby="navbarDarkDropdownMenuLink" style="border: 0;">
-                    <li><a class="dropdown-item" id="newtaskid" href="new-todo.html">Create New</a></li>
+                    aria-labelledby="navbarDarkDropdownMenuLinksidebar" style="border: 0;">
+                    <li><a class="dropdown-item" id="newtaskid" href="new-todo.html">Create New Task</a></li>
                     <li><a class="dropdown-item" id="viewtaskid" href="user-todos.html">View by User</a></li>
                   </ul>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link text-dark" id="newuserid" href="new_user.html">
-                    New User
-                  </a>
-                </li>
+                
               </ul>
             </div>
           </div>
         </nav>
       </div>
-      <dic class="col-md-2">
-    </div>
-    <!--form for new task-->
-    <div class="col-md-6">
-      <div class="bg-light centerdiv">
-        <div class="divheader">
-          <h4 style="padding-top:7px;padding-left: 5px;">Create New Task</h4>
+
+      <!--form for new task-->
+      <div class="col-md-9 d-flex justify-content-center">
+        <div class="bg-light centerdiv fixmargin">
+          <div class="divheader">
+            <h4 style="padding-top:7px;padding-left: 5px;">Create New Task</h4>
+          </div>
+          <form class="row g-3 needs-validation tablediv" id="taskform" novalidate>
+            <div class="col-md-8">
+              <label for="userid" class="form-label">User*</label>
+              <select id="userid" class="form-select" required>
+                <option value="">Select a User</option>
+              </select>
+              <div class="invalid-feedback" id="feedbackuser">
+                Please select a user
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-8">
+              <label for="category" class="form-label">Category*</label>
+              <select id="category" class="form-select" required>
+                <option value="">Select a category</option>
+              </select>
+              <div class="invalid-feedback">
+                Please slect a category
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-8">
+              <label for="description" class="form-label">Description*</label>
+              <textarea class="form-control" id="description" placeholder="Description" required></textarea>
+              <div class="invalid-feedback">
+                Please enter a message in the textarea.
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-8">
+              <label for="deadline" class="form-label">DeadLine*</label>
+              <input type="date" class="form-control" id="deadline" required>
+              <div class="invalid-feedback">
+                Please provide a valid date.
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-8">
+              <label for="priority" class="form-label">Priority*</label>
+              <select class="form-select" id="priority" required>
+                <option selected disabled value="">Choose...</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid Priority.
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+
+
+            <div class="col-12" style="margin-bottom: 20px;">
+              <button class="btn btn-blue" type="submit" id="taskbutton" onclick="addtask(event)">Submit</button>
+            </div>
+          </form>
+
         </div>
-        <form class="row g-3 needs-validation tablediv" id="taskform" novalidate>
-          <div class="col-md-8">
-            <label for="userid" class="form-label">User*</label>
-            <select id="userid" class="form-select" required>
-
-            </select>
-            <div class="invalid-feedback" id="feedbackuser">
-              Please select a user
-            </div>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-          <div class="col-md-8">
-            <label for="category" class="form-label">Category*</label>
-            <select id="category" class="form-select" required>
-            </select>
-            <div class="invalid-feedback">
-              Please slect a category
-            </div>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-          <div class="col-md-8">
-            <label for="description" class="form-label">Description*</label>
-            <textarea class="form-control" id="description" placeholder="Description" required></textarea>
-            <div class="invalid-feedback">
-              Please enter a message in the textarea.
-            </div>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-          <div class="col-md-8">
-            <label for="deadline" class="form-label">DeadLine*</label>
-            <input type="date" class="form-control" id="deadline" required>
-            <div class="invalid-feedback">
-              Please provide a valid date.
-            </div>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-          <div class="col-md-8">
-            <label for="priority" class="form-label">Priority*</label>
-            <select class="form-select" id="priority" required>
-              <option selected disabled value="">Choose...</option>
-              <option value="Low">Low</option>
-              <option value="Medium">Medium</option>
-              <option value="High">High</option>
-            </select>
-            <div class="invalid-feedback">
-              Please select a valid Priority.
-            </div>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-
-
-          <div class="col-12" style="margin-bottom: 20px;">
-            <button class="btn btn-blue" type="submit" id="taskbutton" onclick="addtask(event)">Submit</button>
-          </div>
-        </form>
-        <div id="confirmationMessage"></div>
       </div>
     </div>
   </div>
-  </div>
+
   <!--footer-->
 
   <footer>

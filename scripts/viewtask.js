@@ -17,7 +17,6 @@ function getusers()
 {
     // Specify the API endpoint for user data
     const apiUrl = 'http://localhost:8083/api/users';
-    let li="";
     const userlist = document.getElementById("userlList");
     let theOption1 = new Option("Select a User", ""); 
     userlist.appendChild(theOption1);

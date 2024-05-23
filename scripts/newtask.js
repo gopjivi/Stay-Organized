@@ -14,8 +14,8 @@ function getusers() {
   const apiUrl = 'http://localhost:8083/api/users';
   let li = "";
   const userlist = document.getElementById("userid");
-  let theOption1 = new Option("Select a User", "");
-  userlist.appendChild(theOption1);
+ // let theOption1 = new Option("Select a User", "");
+  //userlist.appendChild(theOption1);
 
   fetch(apiUrl)
     .then(response => {
@@ -44,8 +44,8 @@ function getcategory() {
   const apiUrl = 'http://localhost:8083/api/categories';
   let li = "";
   const categorylist = document.getElementById("category");
-  let theOption1 = new Option("Select a category", "");
-  categorylist.appendChild(theOption1);
+ // let theOption1 = new Option("Select a category", "");
+ // categorylist.appendChild(theOption1);
   fetch(apiUrl)
     .then(response => {
       if (!response.ok) {

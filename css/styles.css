@@ -85,6 +85,7 @@ li>.dropdown-menu {
 li>.dropdown-menu {
     background-color: #f8f9fa;
     z-index: 2000;
+    padding-left: 15px;
 }
 
 .fixmargin {
@@ -184,3 +185,15 @@ li>.dropdown-menu {
         height: 100%;
     }
 }
+
+.offcanvas-start
+{
+    width: 250px;
+}
+.nav-item a:hover
+{
+    background-color:#89CFF0;
+}
+ .rotate-down {
+    transform: rotate(180deg);
+  }

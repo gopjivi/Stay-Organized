@@ -40,7 +40,7 @@ function LoginUser(e) {
           // );
         }
         else {
-          console.log("hi", response.status);
+          
           document.getElementById("username").setCustomValidity("Please enter a valid UserName");
           return false;
         }
@@ -54,4 +54,10 @@ function LoginUser(e) {
     document.getElementById("username").setCustomValidity("Please enter a valid UserName");
     return false;
   }
+}
+document.getElementById("username").addEventListener("focusout", Loadpassowd);
+
+function Loadpassowd()
+{
+  document.getElementById("password").value="password";
 }

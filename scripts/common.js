@@ -144,4 +144,12 @@ function Hideitem() {
 }
 function Viewitem() {
   document.getElementById("menuitemid").classList.add("show");
+  // this is just grabbing a div, you can change it to select any element
+//const element = document.querySelectorAll(".dropdown-toggle");
+
+//selement.style.setProperty("transform", "rotate(180deg)");
+//var styleElement = document.getElementById('custom-style');
+// Add or modify styles using JavaScript
+//styleElement.innerHTML = '.dropdown-toggle::after { transform: rotate(180deg) }';
 }
+

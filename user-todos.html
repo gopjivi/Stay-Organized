@@ -22,7 +22,7 @@
 <body class="bgcolor">
 
   <nav class="navbar navbar-light 
-                 border-bottom-0">
+                 border-bottom-0" style="margin-bottom: 3px;">
     <!-- Navbar toggle button (hamburger icon) -->
     <button class="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
       aria-controls="sidebar">
@@ -32,8 +32,8 @@
   <!--offcanvas for small screen-->
   <div class="offcanvas offcanvas-start 
                  d-md-block bg-light" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title text-light" id="sidebarLabel">Stay-Organised</h5>
+    <div class="offcanvas-header topheader">
+      <h5 class="offcanvas-title text-dark" id="sidebarLabel">Stay-Organised</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
       </button>
     </div>
@@ -45,22 +45,22 @@
             Home
           </a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link text-dark" id="canvasnewuserid" href="new_user.html">
+           Create New User
+          </a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
             data-bs-toggle="dropdown" aria-expanded="false">
             Tasks
           </a>
           <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink" style="border: 0;">
-            <li><a class="dropdown-item" id="canvasnewtaskid" href="new-todo.html">Create New</a></li>
+            <li><a class="dropdown-item" id="canvasnewtaskid" href="new-todo.html">Create New Task</a></li>
             <li><a class="dropdown-item" id="canvasviewtaskid" href="user-todos.html">View by User</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" id="canvasnewuserid" href="new_user.html">
-            New User
-          </a>
-        </li>
+       
       </ul>
     </div>
   </div>
@@ -115,6 +115,11 @@
                     Home
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark" id="newuserid" href="new_user.html">
+                   Create New User
+                  </a>
+                </li>
                 <!-- <li class="nav-item">
                               <a class="nav-link text-dark"
                               href="user-todos.html">
@@ -123,20 +128,16 @@
                           </li> -->
                 <li class="nav-item dropdown">
                   <a class="nav-link text-dark dropdown-toggle" onclick=Viewitem() href="#"
-                    id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    id="navbarDarkDropdownMenuLinksidebar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Tasks
                   </a>
                   <ul class="dropdown-menu dropdown-menu-light" onmouseleave=Hideitem() id="menuitemid"
-                    aria-labelledby="navbarDarkDropdownMenuLink" style="border: 0;">
-                    <li><a class="dropdown-item" id="newtaskid" href="new-todo.html">Create New</a></li>
+                    aria-labelledby="navbarDarkDropdownMenuLinksidebar" style="border: 0;">
+                    <li><a class="dropdown-item" id="newtaskid" href="new-todo.html">Create New Task</a></li>
                     <li><a class="dropdown-item" id="viewtaskid" href="user-todos.html">View by User</a></li>
                   </ul>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link text-dark" id="newuserid" href="new_user.html">
-                    New User
-                  </a>
-                </li>
+               
               </ul>
             </div>
           </div>
@@ -146,7 +147,7 @@
         <!--main content dropdown-->
         <div class="row  margintop text-center">
           <div class="text-center">
-            <lable>Please Select User Here :</lable>
+            Please Select User Here :
             <select id="userlList" class="dropdown-toggle">
             </select>
           </div>
