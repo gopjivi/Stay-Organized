@@ -50,9 +50,9 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                    <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" onclick="ViewitemCanvas()"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Tasks
+                        Tasks &nbsp;<span class="arrowforcanvas"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink"
                         style="border: 0;">
@@ -130,12 +130,12 @@
                                 </a>
                             </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link text-dark dropdown-toggle" onclick=Viewitem() href="#"
+                                    <a class="nav-link text-dark dropdown-toggle" href="#" onclick="Viewitem()"
                                         id="navbarDarkDropdownMenuLinksidebar" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
-                                        Tasks
+                                        Tasks &nbsp;<span class="arrow"></span>
                                     </a>
-                                    <ul class="dropdown-menu dropdown-menu-light" onmouseleave=Hideitem()
+                                    <ul class="dropdown-menu dropdown-menu-light"
                                         id="menuitemid" aria-labelledby="navbarDarkDropdownMenuLinksidebar" style="border: 0;">
                                         <li><a class="dropdown-item" id="newtaskid" href="new-todo.html">Create New Task</a>
                                         </li>
