@@ -1,82 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/styles.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/styles.css">
+    <!-- Bootstrap Font Icon CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <title>Stay Organized</title>
+    <script src="scripts/common.js" defer></script>
+    <script src="scripts/viewtask.js" defer></script>
+  </head>
 
-  <!-- Bootstrap Font Icon CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-  <title>Stay Organized</title>
-  <script src="scripts/common.js" defer></script>
-  <script src="scripts/viewtask.js" defer></script>
-
-</head>
-
-<body class="bgcolor">
-
-  <nav class="navbar navbar-light 
-                 border-bottom-0" style="margin-bottom: 3px;">
-    <!-- Navbar toggle button (hamburger icon) -->
-    <button class="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
-      aria-controls="sidebar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </nav>
-  <!--offcanvas for small screen-->
-  <div class="offcanvas offcanvas-start 
-                 d-md-block bg-light" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
-    <div class="offcanvas-header topheader">
-      <h5 class="offcanvas-title text-dark" id="sidebarLabel">Stay-Organised</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+  <body class="bgcolor">
+    <nav class="navbar navbar-light border-bottom-0" style="margin-bottom: 3px">
+      <!-- Navbar toggle button (hamburger icon) -->
+      <button
+        class="navbar-toggler d-block d-md-none"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#sidebar"
+        aria-controls="sidebar"
+      >
+        <span class="navbar-toggler-icon"></span>
       </button>
-    </div>
-    <div class="offcanvas-body">
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active 
-                            text-dark" id="canvashomelinkid" href="index.html">
-            Home
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" id="canvasnewuserid" href="new_user.html">
-           Create New User
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" onclick="ViewitemCanvas()"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Tasks &nbsp;<span class="arrowforcanvas"></span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink" style="border: 0;">
-            <li><a class="dropdown-item" id="canvasnewtaskid" href="new-todo.html">Create New Task</a></li>
-            <li><a class="dropdown-item" id="canvasviewtaskid" href="user-todos.html">View by User</a></li>
-          </ul>
-        </li>
-       
-      </ul>
-    </div>
-  </div>
-
-  <div class="container-fluid" style="margin-top: 0;">
-    <!--main header-->
-    <div class="row topheader">
-
-      <div class="col-md-2 my-auto ">
-        <h5 class="brand-name">Stay-Organised</h5>
+    </nav>
+    <!--offcanvas for small screen-->
+    <div
+      class="offcanvas offcanvas-start d-md-block bg-light"
+      tabindex="-1"
+      id="sidebar"
+      aria-labelledby="sidebarLabel"
+    >
+      <div class="offcanvas-header topheader">
+        <h5 class="offcanvas-title text-dark" id="sidebarLabel">
+          Stay-Organised
+        </h5>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
       </div>
-      <div class="col-md-4 my-auto d-none d-sm-none d-md-block d-lg-block">
-
+      <div class="offcanvas-body">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a
+              class="nav-link active text-dark"
+              id="canvashomelinkid"
+              href="index.html"
+            >
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link text-dark"
+              id="canvasnewuserid"
+              href="new_user.html"
+            >
+              Create New User
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link text-dark dropdown-toggle"
+              href="#"
+              id="navbarDarkDropdownMenuLink"
+              role="button"
+              onclick="ViewitemCanvas()"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Tasks &nbsp;<span class="arrowforcanvas"></span>
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-light"
+              aria-labelledby="navbarDarkDropdownMenuLink"
+              style="border: 0"
+            >
+              <li>
+                <a
+                  class="dropdown-item"
+                  id="canvasnewtaskid"
+                  href="new-todo.html"
+                  >Create New Task</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  id="canvasviewtaskid"
+                  href="user-todos.html"
+                  >View by User</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
-      <div class="col-md-3 my-auto">
-        <!-- <form role="search">
+    </div>
+
+    <div class="container-fluid" style="margin-top: 0">
+      <!--main header-->
+      <div class="row topheader">
+        <div class="col-md-2 my-auto">
+          <h5 class="brand-name">Stay-Organised</h5>
+        </div>
+        <div
+          class="col-md-4 my-auto d-none d-sm-none d-md-block d-lg-block"
+        ></div>
+        <div class="col-md-3 my-auto">
+          <!-- <form role="search">
                     <div class="input-group">
                         <input type="search" placeholder="Search" class="form-control" >
                         <button class="btn" type="submit">
@@ -84,199 +134,287 @@
                         </button>
                     </div>
                 </form> -->
+        </div>
+        <div class="col-md-3 my-auto">
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="login.html">
+                <span id="headername"></span> <i class="bi-person-fill"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="col-md-3 my-auto">
-        <ul class="nav justify-content-end">
-
-
-          <li class="nav-item">
-
-            <a class="nav-link text-dark" href="login.html">
-              <span id="headername"></span> <i class="bi-person-fill"></i>
-            </a>
-          </li>
-
-        </ul>
-      </div>
-
-    </div>
-    <div class="row usertodorow">
-      <!--side menu-->
-      <div class="col-md-3 col-lg-2 d-none 
-            d-md-block sidebar bg-light">
-        <nav id="sidebarMenu">
-          <div class="sidebarheight">
-            <div class="pt-3">
-
-              <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a class="nav-link active 
-                                      text-dark" id="homelinkid" href="index.html">
-                    Home
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-dark" id="newuserid" href="new_user.html">
-                   Create New User
-                  </a>
-                </li>
-                <!-- <li class="nav-item">
+      <div class="row usertodorow">
+        <!--side menu-->
+        <div class="col-md-3 col-lg-2 d-none d-md-block sidebar bg-light">
+          <nav id="sidebarMenu">
+            <div class="sidebarheight">
+              <div class="pt-3">
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active text-dark"
+                      id="homelinkid"
+                      href="index.html"
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-dark"
+                      id="newuserid"
+                      href="new_user.html"
+                    >
+                      Create New User
+                    </a>
+                  </li>
+                  <!-- <li class="nav-item">
                               <a class="nav-link text-dark"
                               href="user-todos.html">
                                 ToDo Task
                               </a>
                           </li> -->
-                <li class="nav-item dropdown">
-                  <a class="nav-link text-dark dropdown-toggle" href="#" onclick="Viewitem()"
-                    id="navbarDarkDropdownMenuLinksidebar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Tasks &nbsp;<span class="arrow"></span>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-light" id="menuitemid"
-                    aria-labelledby="navbarDarkDropdownMenuLinksidebar" style="border: 0;">
-                    <li><a class="dropdown-item" id="newtaskid" href="new-todo.html">Create New Task</a></li>
-                    <li><a class="dropdown-item" id="viewtaskid" href="user-todos.html">View by User</a></li>
-                  </ul>
-                </li>
-               
-              </ul>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link text-dark dropdown-toggle"
+                      href="#"
+                      onclick="Viewitem()"
+                      id="navbarDarkDropdownMenuLinksidebar"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Tasks &nbsp;<span class="arrow"></span>
+                    </a>
+                    <ul
+                      class="dropdown-menu dropdown-menu-light"
+                      id="menuitemid"
+                      aria-labelledby="navbarDarkDropdownMenuLinksidebar"
+                      style="border: 0"
+                    >
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          id="newtaskid"
+                          href="new-todo.html"
+                          >Create New Task</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          id="viewtaskid"
+                          href="user-todos.html"
+                          >View by User</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </nav>
-      </div>
-      <div class="col-md-9">
-        <!--main content dropdown-->
-        <div class="row  margintop text-center">
-          <div class="text-center">
-            Please Select User Here :
-            <select id="userlList" class="dropdown-toggle">
-            </select>
-          </div>
+          </nav>
+        </div>
+        <div class="col-md-9">
+          <!--main content dropdown-->
+          <div class="row margintop text-center">
+            <div class="text-center">
+              Please Select User Here :
+              <select id="userlList" class="dropdown-toggle"></select>
+            </div>
 
-          <div class="table-responsive" style="margin-top: 20px;">
-            <table id="tasktable" class="table table-striped align-middle mt-20 bg-white text-center">
-              <thead class="bg-light">
-                <tr>
-                  <!-- <th>category</th> -->
-                  <th>Description</th>
-                  <th>Deadline</th>
-                  <th>Priority</th>
-                  <th>Completed</th>
-                  <th>View</th>
-                  <th>Edit</th>
-                </tr>
-              </thead>
-              <tbody id="displaytask">
-
-              </tbody>
-            </table>
-            <div id="noresult" class="text-center bg-light text-danger">
-              No Results Found !!!
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <input type="hidden" id="pagename" value="usertodopage">
-  <!-- Modal -->
-  <div class="modal fade" id="todoModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header divheader">
-          <h5 class="modal-title" id="exampleModalLabel">User Task Detail</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-
-            <div class="row" style="margin-bottom: 15px;">
-              <div class="col-md-4">Category</div>
-              <div class="col-md-4 ms-auto"><span id="modalcategory"></span></div>
-            </div>
-            <div class="row" style="margin-bottom: 15px;">
-              <div class="col-md-4">Description</div>
-              <div class="col-md-4 ms-auto"><span id="modaldescription"></span></div>
-            </div>
-            <div class="row" style="margin-bottom: 15px;">
-              <div class="col-md-4">Deadline</div>
-              <div class="col-md-4 ms-auto"><span id="modaldeadline"></span></div>
-            </div>
-            <div class="row" style="margin-bottom: 15px;">
-              <div class="col-md-4">Priority</div>
-              <div class="col-md-4 ms-auto"><span id="modalpriority" class="badge"></span></div>
-            </div>
-            <div class="row" style="margin-bottom: 15px;">
-              <div class="col-md-4">Completed</div>
-              <div class="col-md-4 ms-auto"><span id="modalcompleted"></span></div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-blue" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="todoeditModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
-    aria-labelledby="exampleeditModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header divheader">
-          <h5 class="modal-title" id="exampleeditModalLabel">Update User Task</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <input type="hidden" id="todoid">
-            <div class="row" style="margin-bottom: 15px;">
-              <div class="col-md-4">Category</div>
-              <div class="col-md-4 ms-auto"><span id="editmodalcategory"></span></div>
-            </div>
-            <div class="row" style="margin-bottom: 15px;">
-              <div class="col-md-4">Description</div>
-              <div class="col-md-4 ms-auto"><span id="editmodaldescription"></span></div>
-            </div>
-            <div class="row" style="margin-bottom: 15px;">
-              <div class="col-md-4">Deadline</div>
-              <div class="col-md-4 ms-auto"><span id="editmodaldeadline"></span></div>
-            </div>
-            <div class="row" style="margin-bottom: 15px;">
-              <div class="col-md-4">Priority</div>
-              <div class="col-md-4 ms-auto"><span id="editmodalpriority" class="badge"></span></div>
-            </div>
-            <div class="row" style="margin-bottom: 15px;">
-              <div class="col-md-4">Completed</div>
-              <div class="col-md-4 ms-auto">
-                <input type="radio" id="trueOption" name="booleanOption" value="true">
-                <label for="trueOption">True</label>
-                <input type="radio" id="falseOption" name="booleanOption" value="false">
-                <label for="falseOption">False</label>
+            <div class="table-responsive" style="margin-top: 20px">
+              <table
+                id="tasktable"
+                class="table table-striped align-middle mt-20 bg-white text-center"
+              >
+                <thead class="bg-light">
+                  <tr>
+                    <!-- <th>category</th> -->
+                    <th>Description</th>
+                    <th>Deadline</th>
+                    <th>Priority</th>
+                    <th>Completed</th>
+                    <th>View</th>
+                    <th>Edit</th>
+                  </tr>
+                </thead>
+                <tbody id="displaytask"></tbody>
+              </table>
+              <div id="noresult" class="text-center bg-light text-danger">
+                No Results Found !!!
               </div>
             </div>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-blue" data-bs-dismiss="modal" onclick=Updatetodostatus()>Update</button>
-          <button type="button" class="btn btn-blue" data-bs-dismiss="modal">Close</button>
-        </div>
       </div>
     </div>
-  </div>
-  <!--footer-->
-  <footer>
-    <div class="copyright-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <p class="text-center"> &copy; 2024 - Stay-Organised. All rights reserved.</p>
+    <input type="hidden" id="pagename" value="usertodopage" />
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="todoModal"
+      tabindex="-1"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header divheader">
+            <h5 class="modal-title" id="exampleModalLabel">User Task Detail</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
-
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row" style="margin-bottom: 15px">
+                <div class="col-md-4">Category</div>
+                <div class="col-md-4 ms-auto">
+                  <span id="modalcategory"></span>
+                </div>
+              </div>
+              <div class="row" style="margin-bottom: 15px">
+                <div class="col-md-4">Description</div>
+                <div class="col-md-4 ms-auto">
+                  <span id="modaldescription"></span>
+                </div>
+              </div>
+              <div class="row" style="margin-bottom: 15px">
+                <div class="col-md-4">Deadline</div>
+                <div class="col-md-4 ms-auto">
+                  <span id="modaldeadline"></span>
+                </div>
+              </div>
+              <div class="row" style="margin-bottom: 15px">
+                <div class="col-md-4">Priority</div>
+                <div class="col-md-4 ms-auto">
+                  <span id="modalpriority" class="badge"></span>
+                </div>
+              </div>
+              <div class="row" style="margin-bottom: 15px">
+                <div class="col-md-4">Completed</div>
+                <div class="col-md-4 ms-auto">
+                  <span id="modalcompleted"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-blue" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </footer>
-</body>
 
+    <div
+      class="modal fade"
+      id="todoeditModal"
+      tabindex="-1"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      aria-labelledby="exampleeditModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header divheader">
+            <h5 class="modal-title" id="exampleeditModalLabel">
+              Update User Task
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <input type="hidden" id="todoid" />
+              <div class="row" style="margin-bottom: 15px">
+                <div class="col-md-4">Category</div>
+                <div class="col-md-4 ms-auto">
+                  <span id="editmodalcategory"></span>
+                </div>
+              </div>
+              <div class="row" style="margin-bottom: 15px">
+                <div class="col-md-4">Description</div>
+                <div class="col-md-4 ms-auto">
+                  <span id="editmodaldescription"></span>
+                </div>
+              </div>
+              <div class="row" style="margin-bottom: 15px">
+                <div class="col-md-4">Deadline</div>
+                <div class="col-md-4 ms-auto">
+                  <span id="editmodaldeadline"></span>
+                </div>
+              </div>
+              <div class="row" style="margin-bottom: 15px">
+                <div class="col-md-4">Priority</div>
+                <div class="col-md-4 ms-auto">
+                  <span id="editmodalpriority" class="badge"></span>
+                </div>
+              </div>
+              <div class="row" style="margin-bottom: 15px">
+                <div class="col-md-4">Completed</div>
+                <div class="col-md-4 ms-auto">
+                  <input
+                    type="radio"
+                    id="trueOption"
+                    name="booleanOption"
+                    value="true"
+                  />
+                  <label for="trueOption">Yes</label>
+                  <input
+                    type="radio"
+                    id="falseOption"
+                    name="booleanOption"
+                    value="false"
+                  />
+                  <label for="falseOption">No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-blue"
+              data-bs-dismiss="modal"
+              onclick="Updatetodostatus()"
+            >
+              Update
+            </button>
+            <button type="button" class="btn btn-blue" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--footer-->
+    <footer>
+      <div class="copyright-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="text-center">
+                &copy; 2024 - Stay-Organised. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
